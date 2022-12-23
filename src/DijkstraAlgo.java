@@ -4,7 +4,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class DijkstraAlgo {
-    public static Graph calculateShortestPathFromSource(Graph graph, Node source) {
+    public static Graph calculateShortestPathFromSource(Graph graph, Node source) // calculating the path using dijkstra's rule
+    {
         source.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -29,7 +30,8 @@ public class DijkstraAlgo {
         return graph;
     }
 
-    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
+    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) // lowest node from the unsettled set list
+    {
         Node lowestDistanceNode = null;
         int lowestDistance = Integer.MAX_VALUE;
         for (Node node: unsettledNodes) {
@@ -42,9 +44,11 @@ public class DijkstraAlgo {
         return lowestDistanceNode;
     }
 
-    private static void calculateMinimumDistance(Node evaluationNode, Integer edgeWeigh, Node sourceNode) {
+    private static void calculateMinimumDistance(Node evaluationNode, Integer edgeWeigh, Node sourceNode) // calculating the min distance for adjacent nodes
+    {
         Integer sourceDistance = sourceNode.getDistance();
-        if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
+        if (sourceDistance + edgeWeigh < evaluationNode.getDistance())
+        {
             evaluationNode.setDistance(sourceDistance + edgeWeigh);
             LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
             shortestPath.add(sourceNode);

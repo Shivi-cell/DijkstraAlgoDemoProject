@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Node {
-    private String name;
-    private List<Node> shortestPath = new LinkedList<>();
-    private Integer distance = Integer.MAX_VALUE;
-    private Map<Node, Integer> adjacentNodes = new HashMap<>();
+    private String name; // Names for the node
+    private List<Node> shortestPath = new LinkedList<>(); // for every node there should be the shortest path from the source
+    private Integer distance = Integer.MAX_VALUE; // distance for every node
+    private Map<Node, Integer> adjacentNodes = new HashMap<>(); // adjacent nodes for the node
 
-    public void addDestination(Node destination, int distance) {
+    public void addDestination(Node destination, int distance) // adding destination(edges) to the nodes
+    {
         adjacentNodes.put(destination, distance);
     }
 

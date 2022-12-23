@@ -1,8 +1,11 @@
 import java.util.*;
 
 public class Graph {
-    Set<Node> nodes = new LinkedHashSet<>();
-
+    Set<Node> nodes; // graph contains a set of nodes
+    Graph()
+    {
+        nodes = new LinkedHashSet<>();
+    }
     public void addNode(Node nodeA) {
         nodes.add(nodeA);
     }
@@ -15,7 +18,7 @@ public class Graph {
         this.nodes = nodes;
     }
 
-    public void printGraph()
+    public void printGraph() // method for printing the graph
     {
         System.out.println("Printing graph info..");
         for (Node n : nodes)
